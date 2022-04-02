@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Vasil_Stoyanov_employees.Web</RootNamespace>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vasil-Stoyanov-employees.Common\Vasil-Stoyanov-employees.Common.csproj" />
+    <ProjectReference Include="..\Vasil-Stoyanov-employees.Services\Vasil-Stoyanov-employees.Services.csproj" />
+  </ItemGroup>
+
+</Project>

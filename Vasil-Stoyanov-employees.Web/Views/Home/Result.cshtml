@@ -1,0 +1,26 @@
+﻿@model Vasil_Stoyanov_employees.Services.Models.BestPairServiceModel
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Employee ID #1</th>
+        <th scope="col">Employee ID #2</th>
+        <th scope="col">Project ID</th>
+        <th scope="col">Days worked</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model.ProjectsAndDaysWorked.Count > 0)
+    {
+        @foreach (var (projectId, daysWorked) in Model.ProjectsAndDaysWorked)
+        {
+            <tr>
+                <td>@Model.EmpOneId</td>
+                <td>@Model.EmpTwoId</td>
+                <td>@projectId</td>
+                <td>@daysWorked</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>

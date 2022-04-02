@@ -1,0 +1,29 @@
+﻿@using Vasil_Stoyanov_employees.Common
+@model Vasil_Stoyanov_employees.Web.Models.FileFormModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (TempData.ContainsKey(DataConstants.ErrorMessages.InvalidFileExtensionKey))
+{
+    <div class="alert alert-danger text-center" role="alert">
+        @TempData[DataConstants.ErrorMessages.InvalidFileExtensionKey]
+    </div>
+}
+
+<form enctype="multipart/form-data" method="post" asp-action="Upload">
+    <div class="form-group">
+        <div class="col-md-10"></div>
+        <p>Upload a .csv file</p>
+        <input asp-for="@Model.File" type="file">
+        <span asp-validation-for="@Model.File" class="small text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Upload" />
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
