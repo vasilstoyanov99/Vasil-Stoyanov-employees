@@ -3,7 +3,6 @@
     using System.IO;
     using System.Diagnostics;
 
-    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
 
     using Models;
@@ -29,7 +28,7 @@
         {
             if (!ModelState.IsValid)
             {
-                this.TempData[InvalidFileExtensionKey] = InvalidExtensionType;
+                this.TempData[SomethingWentWrongKey] = SomethingWentWrong;
 
                 return this.RedirectToAction(nameof(this.Index));
             }

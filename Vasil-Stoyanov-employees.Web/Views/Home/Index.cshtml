@@ -12,6 +12,13 @@
     </div>
 }
 
+@if (TempData.ContainsKey(DataConstants.ErrorMessages.SomethingWentWrongKey))
+{
+    <div class="alert alert-danger text-center" role="alert">
+        @TempData[DataConstants.ErrorMessages.SomethingWentWrongKey]
+    </div>
+}
+
 <form enctype="multipart/form-data" method="post" asp-action="Upload">
     <div class="form-group">
         <div class="col-md-10"></div>
